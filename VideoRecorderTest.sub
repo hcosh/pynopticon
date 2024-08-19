@@ -1,0 +1,16 @@
+// {{{ 2 "SubmethodForwardDeclaration" ""
+function OnAbort(  ) void ;
+// }} ""
+// {{{ 5 "OnAbort" "Begin"
+function OnAbort(  ) void {
+// }} ""
+// {{ 5 "OnAbort" "InitLocals"
+// }} ""
+// {{{ 8 1 0 "bfa8da4f_dccc_409c_8770a6aeb3a70e4c" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+VIDEORECORDER::StopRecord();
+// }} ""
+// {{{ 5 "OnAbort" "End"
+}
+// }} ""
+/* {{ 2 "SubmethodInsertLine" "" */ // }} ""
+// $$author=DKHACO$$valid=0$$time=2024-08-16 13:53$$checksum=2dc24289$$length=085$$

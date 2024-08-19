@@ -1,0 +1,72 @@
+#include "VideoRecorderTest.res"
+global device ML_STAR ("VideoRecorderTest.lay", "ML_STAR", hslTrue);
+ namespace _Method { #include "ASWStandard\\TraceLevel\\TraceLevel.hsl" } 
+ namespace _Method { #include "VideoRecorderHamilton\\VideoRecorder.hs_" } 
+/* {{ 2 "LibraryInsertLine" "" */ // }} ""
+variable object1;
+timer timer1;
+/* {{ 2 "VariableInsertLine" "" */ // }} ""
+// {{ 2 "TemplateIncludeBlock" ""
+ namespace _Method { #include "HSLMETEDLib.hs_" } 
+ namespace _Method { #include "HSLMECCLib.hs_" } 
+ namespace _Method { #include "HSLPTLLib.hsl" } 
+// }} ""
+// {{{ 2 "LocalSubmethodInclude" ""
+ namespace _Method {  #include __filename__ ".sub"  } 
+// }} ""
+/* {{ 2 "ProcessInsertLine" "" */ // }} ""
+// {{{ 5 "main" "Begin"
+namespace _Method { method main(  ) void {
+// }} ""
+// {{ 5 "main" "InitLocals"
+// }} ""
+// {{ 2 "AutoInitBlock" ""
+PTL::SetWashingStateDefault("RinseTime1", 5);
+PTL::SetWashingStateDefault("SoakTime1", 5);
+PTL::SetWashingStateDefault("FlowRate1", 11);
+PTL::SetWashingStateDefault("RinseTime2", 0);
+PTL::SetWashingStateDefault("SoakTime2", 0);
+PTL::SetWashingStateDefault("FlowRate2", 11);
+PTL::SetWashingStateDefault("DrainingTime", 10);
+PTL::SetWashingStateDefault("StartWashLiquid", 0);
+PTL::SetLoadingStateDefault("RecoveryOptionContinue", hslTrue);
+PTL::SetLoadingStateDefault("RecoveryOptionExclude", hslTrue);
+PTL::SetLoadingStateDefault("RecoveryOptionDefault", 0);
+PTL::SetLoadingStateDefault("KitLotCheckEnabled", hslFalse);
+VIDEORECORDER::_InitLibrary();
+::RegisterAbortHandler( "OnAbort");
+// }} ""
+// {{ 1 1 0 "b970bc08_85cd_47ed_a7c9b27a385ca5a2" "ML_STAR:{1C0C0CB0-7C87-11D3-AD83-0004ACB1DCB2}"
+{
+	variable arrRetValues[];
+	arrRetValues = ML_STAR._1C0C0CB0_7C87_11D3_AD83_0004ACB1DCB2("b970bc08_85cd_47ed_a7c9b27a385ca5a2"); // Initialize
+}
+// }} ""
+// {{{ 2 1 0 "ddc2dec7_8b79_4282_846e0532586fb1c3" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+VIDEORECORDER::Initialise(3, Translate("C:\\Program Files (x86)\\HAMILTON\\Versioned_methods\\pynopticon"));
+// }} ""
+// {{{ 3 1 0 "0fa42912_859c_448a_b628c2e93fa646a7" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+VIDEORECORDER::StartRecord();
+// }} ""
+// {{ 4 1 0 "6f177d4b_181c_4c60_ba100dc09fa9db12" "{B31F353E-5D80-11d4-A5EB-0050DA737D89}"
+if( 0 == timer1.SetTimer(10) )
+{
+    MECC::RaiseRuntimeErrorEx(-1355939584, MECC::IDS::stepNameTimerStart, MECC::IDS::errorStepFailed, "", "HxMetEdCompCmd");
+}
+// }} ""
+// {{ 5 1 0 "858ddc76_9636_45a6_ae06501a2cf8bf07" "{B31F353F-5D80-11d4-A5EB-0050DA737D89}"
+if( 0 == timer1.WaitTimer(hslTrue, hslTrue) )
+{
+    MECC::RaiseRuntimeErrorEx(-1339162368, MECC::IDS::stepNameTimerWait, MECC::IDS::errorStepFailed, "", "HxMetEdCompCmd");
+}
+// }} ""
+// {{{ 6 1 0 "0431b19a_d14d_46b5_89c21003a5aadc6c" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+VIDEORECORDER::StopRecord();
+// }} ""
+// {{ 2 "AutoExitBlock" ""
+VIDEORECORDER::_ExitLibrary();
+// }} ""
+// {{{ 5 "main" "End"
+} }
+// }} ""
+// $$author=DKHACO$$valid=0$$time=2024-08-16 13:53$$checksum=fa3eb655$$length=085$$
